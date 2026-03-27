@@ -3,10 +3,10 @@ name: whatsapp_automation
 version: "1.0.0"
 display_name: "WhatsApp Automation"
 description: "Automatización completa de WhatsApp Web con sesiones persistentes en Chrome headless. Permite enviar mensajes, leer conversaciones y monitorear chats sin necesidad de escanear QR cada vez."
-author: "Agent Zero Team"
+author: "pachuki87"
 license: "MIT"
-repository: "https://github.com/agent0ai/whatsapp-automation"
-homesite: "https://github.com/agent0ai/whatsapp-automation"
+repository: "https://github.com/pachuki87/whatsapp-automation"
+homesite: "https://github.com/pachuki87/whatsapp-automation"
 category: automation
 tags:
   - whatsapp
@@ -131,6 +131,6 @@ changelog:
       - "Documentación completa"
 
 screenshots:
-  - "https://raw.githubusercontent.com/agent0ai/whatsapp-automation/main/screenshot1.png"
-  - "https://raw.githubusercontent.com/agent0ai/whatsapp-automation/main/screenshot2.png"
+  - "https://raw.githubusercontent.com/pachuki87/whatsapp-automation/main/screenshot1.png"
+  - "https://raw.githubusercontent.com/pachuki87/whatsapp-automation/main/screenshot2.png"
 
