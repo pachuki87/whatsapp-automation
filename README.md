@@ -39,7 +39,7 @@ Full WhatsApp Web automation plugin with persistent sessions in headless Chrome.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/agent0ai/whatsapp-automation.git
+git clone https://github.com/pachuki87/whatsapp-automation.git
 cd whatsapp-automation
 
 # 2. Run installation script
@@ -387,9 +387,9 @@ snapshot = chrome.take_snapshot()
 - `/scripts/monitor_chrome.sh` - Monitor Chrome
 
 ### **Repository**
-- [GitHub Repository](https://github.com/agent0ai/whatsapp-automation)
-- [Issues](https://github.com/agent0ai/whatsapp-automation/issues)
-- [Pull Requests](https://github.com/agent0ai/whatsapp-automation/pulls)
+- [GitHub Repository](https://github.com/pachuki87/whatsapp-automation)
+- [Issues](https://github.com/pachuki87/whatsapp-automation/issues)
+- [Pull Requests](https://github.com/pachuki87/whatsapp-automation/pulls)
 
 ## 🤝 Contributions
 
@@ -417,7 +417,7 @@ If you have issues or questions:
 
 **Current version:** 1.0.0  
 **Last updated:** 2026-03-26  
-**Author:** Agent Zero Team
+**Author:** pachuki87
 
 ## 🎯 Next Steps
 

@@ -1,47 +1,47 @@
-# 📝 Guía de Pull Request - WhatsApp Automation Plugin
+# 📝 Pull Request Guide - WhatsApp Automation Plugin
 
-## 🎯 Resumen
-Este plugin proporciona automatización completa de WhatsApp Web con sesiones persistentes en Chrome headless para Agent Zero.
+## 🎯 Summary
+This plugin provides full WhatsApp Web automation with persistent Chrome sessions in headless mode for Agent Zero.
 
-## 📋 Estructura de Archivos
+## 📋 File Structure
 
-### 1. Repositorio del Plugin (GitHub)
+### 1. Plugin Repository (GitHub)
 ```
 whatsapp_automation/
-├── plugin.yaml           # Metadatos del plugin
-├── README.md             # Documentación completa
-├── CONTRIBUTING.md        # Guía de contribuciones
-├── PULL_REQUEST_GUIDE.md # Este archivo
+├── plugin.yaml           # Plugin metadata
+├── README.md             # Complete documentation
+├── CONTRIBUTING.md        # Contribution guide
+├── PULL_REQUEST_GUIDE.md # This file
 └── scripts/
-    ├── install.sh                   # Script de instalación
-    ├── start_whatsapp_persistent.sh  # Iniciar Chrome persistente
-    ├── check_persistence.sh          # Verificar persistencia
-    └── monitor_chrome.sh            # Monitorear Chrome
+    ├── install.sh                   # Installation script
+    ├── start_whatsapp_persistent.sh  # Start persistent Chrome
+    ├── check_persistence.sh          # Verify persistence
+    └── monitor_chrome.sh            # Monitor Chrome
 ```
 
-### 2. Directorio para PR a a0-plugins
+### 2. Directory for PR to a0-plugins
 ```
 a0-plugins-submit/
 └── plugins/
     └── whatsapp_automation/
-        └── index.yaml    # Metadatos para el índice
+        └── index.yaml    # Metadata for the index
 ```
 
-## ✅ Verificación de Especificaciones
+## ✅ Specification Verification
 
-### Cumplimiento de Requisitos a0-plugins:
-- ✅ Nombre del plugin coincide entre carpeta y plugin.yaml: `whatsapp_automation`
-- ✅ Título: "WhatsApp Automation" (20 caracteres, máximo 50)
-- ✅ Descripción: clara y concisa (menos de 500 caracteres)
-- ✅ GitHub URL: apunta al repositorio del plugin
-- ✅ Tags: 5 etiquetas (máximo 5)
-- ✅ index.yaml: 592 bytes (máximo 2000)
-- ✅ Solo un plugin por PR
+### a0-plugins Requirement Compliance:
+- ✅ Plugin name matches between folder and plugin.yaml: `whatsapp_automation`
+- ✅ Title: "WhatsApp Automation" (20 characters, max 50)
+- ✅ Description: clear and concise (less than 500 characters)
+- ✅ GitHub URL: points to the plugin repository
+- ✅ Tags: 5 tags (max 5)
+- ✅ index.yaml: 592 bytes (max 2000)
+- ✅ Only one plugin per PR
 
-### Contenido del index.yaml:
+### Content of index.yaml:
 ```yaml
 title: "WhatsApp Automation"
-description: "Automatización completa de WhatsApp Web con sesiones persistentes en Chrome headless. Permite enviar mensajes, leer conversaciones y monitorear chats sin necesidad de escanear QR cada vez."
+description: "Full WhatsApp Web automation with persistent Chrome sessions in headless mode. Allows sending messages, reading conversations and monitoring chats without needing to scan QR every time."
 github: "https://github.com/agent0ai/whatsapp-automation"
 tags:
   - whatsapp
@@ -51,12 +51,12 @@ tags:
   - persistence
 ```
 
-## 🚀 Pasos para el Pull Request
+## 🚀 Steps for the Pull Request
 
-### Paso 1: Crear el Repositorio del Plugin
+### Step 1: Create the Plugin Repository
 
-1. Crear un nuevo repositorio en GitHub: `https://github.com/agent0ai/whatsapp-automation`
-2. Subir todos los archivos del plugin:
+1. Create a new repository on GitHub: `https://github.com/agent0ai/whatsapp-automation`
+2. Upload all plugin files:
    ```bash
    cd /a0/usr/workdir/whatsapp_automation_plugin/
    git init
@@ -67,31 +67,31 @@ tags:
    git push -u origin main
    ```
 
-### Paso 2: Fork del Repositorio a0-plugins
+### Step 2: Fork the a0-plugins Repository
 
-1. Ir a: https://github.com/agent0ai/a0-plugins
-2. Hacer fork del repositorio
+1. Go to: https://github.com/agent0ai/a0-plugins
+2. Fork the repository
 
-### Paso 3: Crear Estructura del PR
+### Step 3: Create PR Structure
 
-1. Clonar tu fork de a0-plugins:
+1. Clone your a0-plugins fork:
    ```bash
-   git clone https://github.com/TU_USUARIO/a0-plugins.git
+   git clone https://github.com/YOUR_USER/a0-plugins.git
    cd a0-plugins
    ```
 
-2. Crear la estructura del plugin:
+2. Create the plugin structure:
    ```bash
    mkdir -p plugins/whatsapp_automation
    cp /a0/usr/workdir/a0-plugins-submit/plugins/whatsapp_automation/index.yaml plugins/whatsapp_automation/
    ```
 
-3. Verificar contenido:
+3. Verify content:
    ```bash
    cat plugins/whatsapp_automation/index.yaml
    ```
 
-### Paso 4: Commit y Push
+### Step 4: Commit and Push
 
 ```bash
 git add plugins/whatsapp_automation/
@@ -99,70 +99,70 @@ git commit -m "Add WhatsApp Automation plugin"
 git push origin main
 ```
 
-### Paso 5: Crear Pull Request
+### Step 5: Create Pull Request
 
-1. Ir a: https://github.com/agent0ai/a0-plugins
-2. Hacer click en "Pull Requests"
-3. Hacer click en "New Pull Request"
-4. Seleccionar tu fork y rama
-5. Título del PR: `Add WhatsApp Automation Plugin`
-6. Descripción:
+1. Go to: https://github.com/agent0ai/a0-plugins
+2. Click on "Pull Requests"
+3. Click on "New Pull Request"
+4. Select your fork and branch
+5. PR Title: `Add WhatsApp Automation Plugin`
+6. Description:
    ```markdown
-   ## Descripción
+   ## Description
    
-   Este plugin proporciona automatización completa de WhatsApp Web con sesiones persistentes en Chrome headless para Agent Zero.
+   This plugin provides full WhatsApp Web automation with persistent Chrome sessions in headless mode for Agent Zero.
    
-   ## Características
+   ## Features
    
-   - Sesión persistente de WhatsApp Web (survive reinicios)
-   - Compatible con contenedores Docker
-   - Chrome headless sin interfaz gráfica
-   - Scripts de instalación y mantenimiento
-   - Integración con Chrome DevTools MCP
+   - Persistent WhatsApp Web session (survives reboots)
+   - Docker container compatible
+   - Headless Chrome without graphical interface
+   - Installation and maintenance scripts
+   - Integration with Chrome DevTools MCP
    
-   ## Documentación
+   ## Documentation
    
-   - README.md con documentación completa
-   - Scripts de automatización en /scripts/
-   - Ejemplos de uso con Agent Zero
-   - Troubleshooting detallado
+   - README.md with complete documentation
+   - Automation scripts in /scripts/
+   - Usage examples with Agent Zero
+   - Detailed Troubleshooting
    
-   ## Validación
+   ## Validation
    
-   - ✅ Nombre del plugin coincide: whatsapp_automation
-   - ✅ Título < 50 caracteres
-   - ✅ Descripción < 500 caracteres
-   - ✅ GitHub URL válida
-   - ✅ 5 tags (máximo permitido)
-   - ✅ index.yaml < 2000 caracteres
+   - ✅ Plugin name matches: whatsapp_automation
+   - ✅ Title < 50 characters
+   - ✅ Description < 500 characters
+   - ✅ Valid GitHub URL
+   - ✅ 5 tags (maximum allowed)
+   - ✅ index.yaml < 2000 characters
    
-   ## Enlaces
+   ## Links
    
-   - Repositorio del plugin: https://github.com/agent0ai/whatsapp-automation
+   - Plugin repository: https://github.com/agent0ai/whatsapp-automation
    ```
 
-7. Hacer click en "Create Pull Request"
+7. Click on "Create Pull Request"
 
-## 🔍 Validación Automática
+## 🔍 Automatic Validation
 
-El CI de a0-plugins verificará automáticamente:
-- Estructura de carpetas correcta
-- Nombre del plugin coincide con plugin.yaml
-- Campos requeridos presentes en index.yaml
-- Límites de longitud cumplidos
-- GitHub URL válida
+The a0-plugins CI will automatically verify:
+- Correct folder structure
+- Plugin name matches plugin.yaml
+- Required fields present in index.yaml
+- Length limits met
+- Valid GitHub URL
 
-## 📝 Revisión Humana
+## 📝 Human Review
 
-Después de pasar la validación automática, el PR será revisado por un maintainer de Agent Zero.
+After passing automatic validation, the PR will be reviewed by an Agent Zero maintainer.
 
-## ✨ Resultado Esperado
+## ✨ Expected Result
 
-Si el PR es aprobado:
-- El plugin aparecerá en el índice de a0-plugins
-- Los usuarios podrán instalarlo fácilmente
-- La comunidad de Agent Zero tendrá acceso a la automatización de WhatsApp
+If the PR is approved:
+- The plugin will appear in the a0-plugins index
+- Users will be able to install it easily
+- The Agent Zero community will have access to WhatsApp automation
 
 ---
 
-**¡Gracias por contribuir a la comunidad de Agent Zero! 🎉**
+**Thank you for contributing to the Agent Zero community! 🎉**

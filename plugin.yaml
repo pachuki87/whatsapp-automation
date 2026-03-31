@@ -2,7 +2,7 @@ name: whatsapp_automation
 # IMPORTANT: 'name' must exactly match the folder name in the a0-plugins index (plugins/whatsapp_automation/)
 version: "1.0.0"
 display_name: "WhatsApp Automation"
-description: "Automatización completa de WhatsApp Web con sesiones persistentes en Chrome headless. Permite enviar mensajes, leer conversaciones y monitorear chats sin necesidad de escanear QR cada vez."
+description: "Full WhatsApp Web automation with persistent Chrome sessions in headless mode. Allows sending messages, reading conversations, and monitoring chats without needing to scan the QR code every time."
 author: "pachuki87"
 license: "MIT"
 repository: "https://github.com/pachuki87/whatsapp-automation"
@@ -41,26 +41,26 @@ installation:
 configuration:
   variables:
     - name: "CHROME_PROFILE_DIR"
-      description: "Directorio para el perfil persistente de Chrome"
+      description: "Directory for the persistent Chrome profile"
       default: "/a0/usr/workdir/chrome-profile"
       required: true
     - name: "WHATSAPP_URL"
-      description: "URL de WhatsApp Web"
+      description: "WhatsApp Web URL"
       default: "https://web.whatsapp.com"
       required: false
     - name: "DEBUG_PORT"
-      description: "Puerto para Chrome DevTools"
+      description: "Chrome DevTools port"
       default: "9222"
       required: false
 
 setup:
-  description: "El plugin configura Chrome con un perfil persistente que mantiene la sesión de WhatsApp Web activa sin necesidad de escanear QR cada vez."
+  description: "The plugin configures Chrome with a persistent profile that keeps the WhatsApp Web session active without needing to scan QR each time."
   steps:
-    - "Verificar que Google Chrome esté instalado"
-    - "Crear directorio persistente para el perfil de Chrome"
-    - "Iniciar Chrome con flags de persistencia"
-    - "Escanear código QR la primera vez"
-    - "Verificar que la sesión se mantiene tras reinicios"
+    - "Verify Google Chrome is installed"
+    - "Create persistent directory for the Chrome profile"
+    - "Start Chrome with persistence flags"
+    - "Scan QR code the first time"
+    - "Verify that the session remains after reboots"
 
 permissions:
   required:
@@ -71,22 +71,22 @@ permissions:
     - "screen_capture"
 
 features:
-  - name: "Sesión Persistente"
-    description: "Mantiene sesión de WhatsApp Web activa tras reinicios del sistema"
-  - name: "Automatización de Mensajes"
-    description: "Envía y recibe mensajes automáticamente"
-  - name: "Monitoreo de Conversaciones"
-    description: "Monitorea chats específicos en tiempo real"
+  - name: "Persistent Session"
+    description: "Keeps WhatsApp Web session active after system reboots"
+  - name: "Message Automation"
+    description: "Sends and receives messages automatically"
+  - name: "Conversation Monitoring"
+    description: "Monitors specific chats in real time"
   - name: "Headless Operation"
-    description: "Funciona sin interfaz gráfica (modo headless)"
+    description: "Works without graphical interface (headless mode)"
   - name: "Docker Compatible"
-    description: "Compatible con contenedores Docker"
+    description: "Compatible with Docker containers"
   - name: "Chrome DevTools Integration"
-    description: "Se integra con Chrome DevTools MCP para control avanzado"
+    description: "Integrates with Chrome DevTools MCP for advanced control"
 
 usage:
   examples:
-    - title: "Iniciar Chrome con sesión persistente"
+    - title: "Start Chrome with persistent session"
       code: |
         google-chrome \
           --headless=new \
@@ -96,41 +96,40 @@ usage:
           --remote-debugging-port=9222 \
           --user-data-dir=/a0/usr/workdir/chrome-profile/ \
           https://web.whatsapp.com &
-    - title: "Tomar snapshot de WhatsApp Web"
+    - title: "Take snapshot of WhatsApp Web"
       code: |
         {
           "tool_name": "chrome_devtools.take_snapshot",
           "tool_args": {}
         }
-    - title: "Enviar mensaje"
+    - title: "Send message"
       code: |
         {
           "tool_name": "chrome_devtools.fill",
           "tool_args": {
             "uid": "message-input-uid",
-            "value": "Tu mensaje aquí"
+            "value": "Your message here"
           }
         }
 
 troubleshooting:
   common_issues:
-    - problem: "Chrome no se inicia"
-      solution: "Verificar que no esté usando el puerto 9222 o matar procesos zombie de Chrome"
-    - problem: "Sesión se pierde tras reinicio"
-      solution: "Asegurarse de que --user-data-dir apunta a un directorio permanente"
-    - problem: "Código QR aparece cada vez"
-      solution: "Verificar permisos del directorio de perfil y espacio en disco"
+    - problem: "Chrome doesn't start"
+      solution: "Verify that port 9222 is not being used or kill zombie Chrome processes"
+    - problem: "Session is lost after reboot"
+      solution: "Ensure that --user-data-dir points to a permanent directory"
+    - problem: "QR code appears every time"
+      solution: "Verify profile directory permissions and disk space"
 
 changelog:
   - version: "1.0.0"
     date: "2026-03-26"
     changes:
-      - "Versión inicial del plugin"
-      - "Sesión persistente de WhatsApp Web"
-      - "Integración con Chrome DevTools MCP"
-      - "Documentación completa"
+      - "Initial plugin version"
+      - "Persistent WhatsApp Web session"
+      - "Chrome DevTools MCP integration"
+      - "Complete documentation"
 
 screenshots:
-  - "https://raw.githubusercontent.com/agent0ai/a0-plugins/main/plugins/whatsapp_automation/whatsapp%20agent%20zero.png"
-  - "https://raw.githubusercontent.com/agent0ai/a0-plugins/main/plugins/whatsapp_automation/thumbnail.jpg"
-
+  - "https://raw.githubusercontent.com/pachuki87/whatsapp-automation/master/whatsapp%20agent%20zero.png"
+  - "https://raw.githubusercontent.com/pachuki87/whatsapp-automation/master/thumbnail.jpg"
